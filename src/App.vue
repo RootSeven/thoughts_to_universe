@@ -1,28 +1,44 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <ThinkForm></ThinkForm>
+    <TheUniverse></TheUniverse>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ThinkForm from './components/ThinkForm';
+import TheUniverse from './components/TheUniverse';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    ThinkForm,
+    TheUniverse
   }
+
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    margin: 0 auto;
+    padding: 0px;
+    text-align: center;
+  }
+
+  body {
+    background-color: rgb(15, 15, 73);
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  button {
+    border: none;
+    padding: 3px;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    margin: 10px;
+  }
 </style>

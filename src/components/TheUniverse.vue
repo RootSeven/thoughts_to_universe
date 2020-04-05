@@ -3,7 +3,7 @@
   <h2>~ the Universe ~</h2>
   <br>
   <div class="the-universe-thoughts">
-    <p v-on:click="handlePopThought" v-for="(thought, index) in thoughts" :key="index">{{ thought }}</p>
+    <p v-on:click="handlePopThought(index)" v-for="(thought, index) in thoughts" :key="index">{{ thought }}</p>
   </div>
 </div>
 </template>
@@ -25,9 +25,8 @@ export default {
   },
 
   methods: {
-    handlePopThought (thought) {
-      let thoughtText = (thought.target.textContent);
-      this.thoughts.splice(this.thoughts.indexOf(thoughtText), 1)
+    handlePopThought (index) {
+      this.thoughts.splice(index, 1)
     }
   }
 }

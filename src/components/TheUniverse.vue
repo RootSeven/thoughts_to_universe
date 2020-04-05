@@ -1,8 +1,10 @@
 <template>
-<div>
+<div class="the-universe">
   <h2>~ the Universe ~</h2>
   <br>
-  <p v-for="(thought, index) in thoughts" :key="index">{{ thought }}</p>
+  <div class="the-universe-thoughts">
+    <p v-on:click="handlePopThought" v-for="(thought, index) in thoughts" :key="index">{{ thought }}</p>
+  </div>
 </div>
 </template>
 
@@ -20,12 +22,19 @@ export default {
     return {
       thoughts: []
     }
+  },
+
+  methods: {
+    handlePopThought (thought) {
+      let thoughtText = (thought.target.textContent);
+      this.thoughts.splice(this.thoughts.indexOf(thoughtText), 1)
+    }
   }
 }
 </script>
 
 <style scoped>
- div {
+ .the-universe {
     padding: 20px;
     width: 50%;
     margin-top: 10px;
@@ -41,7 +50,13 @@ export default {
     width: 30%;
   }
 
-  p {
+  .the-universe-thoughts > p  {
     font-style: italic;
+    border: 3px solid white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
   }
 </style>

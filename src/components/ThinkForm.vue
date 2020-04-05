@@ -5,7 +5,7 @@
     <p>send a thought out to the Universe</p>
     <br>
     <form v-on:submit.prevent>
-      <input v-model="thought" placeholder="Penny for your thoughts..." type="text">
+      <input v-model="thought" placeholder="penny for your thoughts..." type="text">
       <br>
       <button v-on:click="handleSubmitThought">transmit energy</button>
     </form>
